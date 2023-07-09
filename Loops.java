@@ -18,12 +18,18 @@ public class Loops {
         // } while (i < 11);
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("enter a 'n' numbers");
+        // System.out.println("enter a 'n' numbers");
+        // int n = sc.nextInt();
+        // int sum = 0;
+        // for (int i = 1; i <= n; i++) {
+        // sum = sum + i;
+        // }
+        // System.out.println(sum);
+
+        System.out.println("enter a number");
         int n = sc.nextInt();
-        int sum = 0;
-        for (int i = 1; i <= n; i++) {
-            sum = sum + i;
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(n + "*" + i + "=" + n * i);
         }
-        System.out.println(sum);
     }
 }
