@@ -4,10 +4,15 @@ public class Loops {
         // System.out.println(i);
         // }
 
-        int i = 0;
-        while (i <= 10) {
+        // int i = 0;
+        // while (i <= 10) {
+        // System.out.println(i);
+        // i++;
+        // }
+        int i = 12;
+        do {
             System.out.println(i);
             i++;
-        }
+        } while (i < 11);
     }
 }
