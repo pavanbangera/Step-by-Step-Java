@@ -210,6 +210,17 @@ public class Patterns {
         System.out.println("GCD of " + x + " and " + y + " is " + gcd);
     }
 
+    public static void fibo(int x) {
+        int a = 0, b = 1, c;
+        System.out.print(a + " " + b + " ");
+        for (int i = 2; i < x; i++) {
+            c = a + b;
+            System.out.print(c + " ");
+            a = b;
+            b = c;
+        }
+    }
+
     public static void main(String[] args) {
         // solidRectangle();
         // hollowRectangle();
@@ -226,9 +237,11 @@ public class Patterns {
         Scanner sc = new Scanner(System.in);
         // int n = sc.nextInt();
         // factorial(n);
-        int x = sc.nextInt();
-        int y = sc.nextInt();
-        gcd(x, y);
+        // int x = sc.nextInt();
+        // int y = sc.nextInt();
+        // gcd(x, y);
 
+        int n = sc.nextInt();
+        fibo(n);
     }
 }
