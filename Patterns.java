@@ -200,6 +200,16 @@ public class Patterns {
         System.out.println("Factorial of " + n + " is " + fact);
     }
 
+    public static void gcd(int x, int y) {
+        int gcd = 1;
+        for (int i = 1; i <= x && i <= y; i++) {
+            if (x % i == 0 && y % i == 0) {
+                gcd = i;
+            }
+        }
+        System.out.println("GCD of " + x + " and " + y + " is " + gcd);
+    }
+
     public static void main(String[] args) {
         // solidRectangle();
         // hollowRectangle();
@@ -214,8 +224,11 @@ public class Patterns {
         // palindromicPattern();
         // diamondPattern();
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        factorial(n);
+        // int n = sc.nextInt();
+        // factorial(n);
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        gcd(x, y);
 
     }
 }
