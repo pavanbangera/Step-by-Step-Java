@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Patterns {
     public static void solidRectangle() {
         int n = 4;
@@ -190,6 +192,14 @@ public class Patterns {
 
     }
 
+    public static void factorial(int n) {
+        int fact = 1;
+        for (int i = n; i >= 1; i--) {
+            fact = fact * i;
+        }
+        System.out.println("Factorial of " + n + " is " + fact);
+    }
+
     public static void main(String[] args) {
         // solidRectangle();
         // hollowRectangle();
@@ -202,6 +212,10 @@ public class Patterns {
         // solidRhombusWithHollowRect();
         // numbersPyramid();
         // palindromicPattern();
-        diamondPattern();
+        // diamondPattern();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        factorial(n);
+
     }
 }
