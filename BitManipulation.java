@@ -21,8 +21,19 @@ public class BitManipulation {
 
     }
 
+    public static void clearBit(int i, int j) {
+        int n = i;
+        int pos = j;
+        int bitMask = 1 << pos;
+        int notBitMask = ~(bitMask);
+        int newBit = notBitMask & n;
+        System.out.println(newBit);
+
+    }
+
     public static void main(String[] args) {
         // getBit(5, 2);
-        setBit(5, 1);
+        // setBit(5, 1);
+        clearBit(5, 2);
     }
 }
