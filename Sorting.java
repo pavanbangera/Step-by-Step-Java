@@ -38,11 +38,26 @@ public class Sorting {
         printArray(arr);
     }
 
+    public static void insertionSort(int arr[]) {
+        for (int i = 1; i < arr.length; i++) {
+            int current = arr[i];
+            int sorted = i - 1;
+            while (sorted >= 0 && current < arr[sorted]) {
+                arr[sorted + 1] = arr[sorted];
+                sorted--;
+            }
+            arr[sorted + 1] = current;
+            printArray(arr);
+        }
+        printArray(arr);
+    }
+
     public static void main(String[] args) {
         int arr[] = { 7, 5, 1, 3, 0, 2, 0 };
         printArray(arr);
         // bubbleSort(arr);
-        selectionSort(arr);
+        // selectionSort(arr);
+        insertionSort(arr);
 
     }
 }
