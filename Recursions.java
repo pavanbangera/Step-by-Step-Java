@@ -38,14 +38,29 @@ public class Recursions {
         calcFibo(b, c, --n);
     }
 
+    public static int calcPower(int x, int n) {
+        if (n == 0) {
+            return 1;
+        }
+        // int calcNm1 = calcPower(x, n - 1);
+        // return x * calcNm1;
+        if (n % 2 == 0) {
+            return calcPower(x, n / 2) * calcPower(x, n / 2);
+        } else {
+            return calcPower(x, n / 2) * calcPower(x, n / 2) * x;
+        }
+    }
+
     public static void main(String[] args) {
         int n = 7;
         // printNumber(n);
         // printSum(1, n, 0);
         // int p = calcFact(n);
         // System.out.println(p);
-        int a = 0, b = 1;
-        System.out.print(a + " " + b + " ");
-        calcFibo(a, b, n - 2);
+        // int a = 0, b = 1;
+        // System.out.print(a + " " + b + " ");
+        // calcFibo(a, b, n - 2);
+
+        System.out.println(calcPower(2, 10));
     }
 }
