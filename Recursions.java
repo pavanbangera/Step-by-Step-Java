@@ -29,11 +29,23 @@ public class Recursions {
         return fact;
     }
 
+    public static void calcFibo(int a, int b, int n) {
+        if (n == 0) {
+            return;
+        }
+        int c = a + b;
+        System.out.print(c + " ");
+        calcFibo(b, c, --n);
+    }
+
     public static void main(String[] args) {
-        int n = 5;
+        int n = 7;
         // printNumber(n);
         // printSum(1, n, 0);
-        int p = calcFact(n);
-        System.out.println(p);
+        // int p = calcFact(n);
+        // System.out.println(p);
+        int a = 0, b = 1;
+        System.out.print(a + " " + b + " ");
+        calcFibo(a, b, n - 2);
     }
 }
