@@ -20,9 +20,20 @@ public class Recursions {
         System.out.println(i);
     }
 
+    public static int calcFact(int n) {
+        if (n == 1 || n == 0) {
+            return 1;
+        }
+        int factNxt = calcFact(n - 1);
+        int fact = n * factNxt;
+        return fact;
+    }
+
     public static void main(String[] args) {
         int n = 5;
         // printNumber(n);
-        printSum(1, n, 0);
+        // printSum(1, n, 0);
+        int p = calcFact(n);
+        System.out.println(p);
     }
 }
