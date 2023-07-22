@@ -106,8 +106,7 @@ public class Recursions {
     public static StringBuilder sb = new StringBuilder("");
 
     public static void moveAllX(String str, int index, char elem) {
-        if (index == str.length() - 1) {
-            sb.append(str.charAt(index));
+        if (index == str.length()) {
             for (int i = 1; i <= count; i++) {
                 sb.append(elem);
             }
@@ -120,6 +119,22 @@ public class Recursions {
             sb.append(str.charAt(index));
         }
         moveAllX(str, ++index, elem);
+    }
+
+    public static StringBuilder sb1 = new StringBuilder("");
+    public static boolean map[] = new boolean[26];
+
+    public static void removeDuplicates(String str, int index) {
+        if (index == str.length()) {
+            System.out.println(sb1);
+            return;
+        }
+        char curChar = str.charAt(index);
+        if (map[curChar - 'a'] != true) {
+            map[curChar - 'a'] = true;
+            sb1.append(curChar);
+        }
+        removeDuplicates(str, ++index);
     }
 
     public static void main(String[] args) {
@@ -144,7 +159,9 @@ public class Recursions {
         // int arr[] = { 1, 2, 2, 4, 5 };
         // System.out.println(checkSorted(arr, 0));
 
-        moveAllX("axbxcxxdxx", 0, 'x');
+        // moveAllX("axbxcxxdxx", 0, 'x');
+
+        removeDuplicates("abbcddde", 0);
 
     }
 }
