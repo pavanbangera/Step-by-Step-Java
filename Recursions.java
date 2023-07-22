@@ -102,6 +102,26 @@ public class Recursions {
         }
     }
 
+    public static int count = 0;
+    public static StringBuilder sb = new StringBuilder("");
+
+    public static void moveAllX(String str, int index, char elem) {
+        if (index == str.length() - 1) {
+            sb.append(str.charAt(index));
+            for (int i = 1; i <= count; i++) {
+                sb.append(elem);
+            }
+            System.out.println(sb);
+            return;
+        }
+        if (elem == str.charAt(index)) {
+            ++count;
+        } else {
+            sb.append(str.charAt(index));
+        }
+        moveAllX(str, ++index, elem);
+    }
+
     public static void main(String[] args) {
         // int n = 4;
         // printNumber(n);
@@ -121,7 +141,10 @@ public class Recursions {
         // reverseString(str, str.length() - 1);
 
         // findCharPosition("pavan kumar k", 0, 'a');
-        int arr[] = { 1, 2, 2, 4, 5 };
-        System.out.println(checkSorted(arr, 0));
+        // int arr[] = { 1, 2, 2, 4, 5 };
+        // System.out.println(checkSorted(arr, 0));
+
+        moveAllX("axbxcxxdxx", 0, 'x');
+
     }
 }
