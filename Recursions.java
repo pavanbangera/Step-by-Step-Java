@@ -62,6 +62,15 @@ public class Recursions {
         towerOfHanoi(n - 1, hlpr, src, dest);
     }
 
+    public static void reverseString(String str, int index) {
+        if (index == 0) {
+            System.out.print(str.charAt(index));
+            return;
+        }
+        System.out.print(str.charAt(index));
+        reverseString(str, --index);
+    }
+
     public static void main(String[] args) {
         // int n = 4;
         // printNumber(n);
@@ -73,6 +82,11 @@ public class Recursions {
         // calcFibo(a, b, n - 2);
 
         // System.out.println(calcPower(2, 10));
-        towerOfHanoi(n, 'A', 'B', 'C');
+
+        // int n = 3;
+        // towerOfHanoi(n, 'A', 'B', 'C');
+
+        String str = "pavan kumar k";
+        reverseString(str, str.length() - 1);
     }
 }
