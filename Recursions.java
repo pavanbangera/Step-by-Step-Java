@@ -51,8 +51,19 @@ public class Recursions {
         }
     }
 
+    public static void towerOfHanoi(int n, char src, char hlpr, char dest) {
+        if (n == 1) {
+            System.out.println(src + " -> " + dest);
+            return;
+        }
+        towerOfHanoi(n - 1, src, dest, hlpr);
+        System.out.println("tranfred " + n + " " + src + " -> " + dest);
+        // towerOfHanoi(1, src, hlpr, dest);
+        towerOfHanoi(n - 1, hlpr, src, dest);
+    }
+
     public static void main(String[] args) {
-        int n = 7;
+        // int n = 4;
         // printNumber(n);
         // printSum(1, n, 0);
         // int p = calcFact(n);
@@ -61,6 +72,7 @@ public class Recursions {
         // System.out.print(a + " " + b + " ");
         // calcFibo(a, b, n - 2);
 
-        System.out.println(calcPower(2, 10));
+        // System.out.println(calcPower(2, 10));
+        towerOfHanoi(n, 'A', 'B', 'C');
     }
 }
