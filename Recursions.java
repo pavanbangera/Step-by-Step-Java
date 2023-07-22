@@ -71,6 +71,37 @@ public class Recursions {
         reverseString(str, --index);
     }
 
+    public static int first = -1, last = -1;
+
+    public static void findCharPosition(String str, int index, char elem) {
+        if (index == str.length()) {
+            if (last < first)
+                last = first;
+            System.out.println(first);
+            System.out.println(last);
+            return;
+        }
+        if (elem == str.charAt(index)) {
+            if (first == -1) {
+                first = index;
+            } else {
+                last = index;
+            }
+        }
+        findCharPosition(str, ++index, elem);
+    }
+
+    public static boolean checkSorted(int arr[], int index) {
+        if (index == arr.length - 1) {
+            return true;
+        }
+        if (arr[index] >= arr[index + 1]) {
+            return false;
+        } else {
+            return checkSorted(arr, ++index);
+        }
+    }
+
     public static void main(String[] args) {
         // int n = 4;
         // printNumber(n);
@@ -86,7 +117,11 @@ public class Recursions {
         // int n = 3;
         // towerOfHanoi(n, 'A', 'B', 'C');
 
-        String str = "pavan kumar k";
-        reverseString(str, str.length() - 1);
+        // String str = "pavan kumar k";
+        // reverseString(str, str.length() - 1);
+
+        // findCharPosition("pavan kumar k", 0, 'a');
+        int arr[] = { 1, 2, 2, 4, 5 };
+        System.out.println(checkSorted(arr, 0));
     }
 }
