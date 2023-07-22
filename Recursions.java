@@ -1,3 +1,5 @@
+import java.util.HashSet;
+
 public class Recursions {
     public static void printNumber(int n) {
 
@@ -121,20 +123,37 @@ public class Recursions {
         moveAllX(str, ++index, elem);
     }
 
-    public static StringBuilder sb1 = new StringBuilder("");
     public static boolean map[] = new boolean[26];
 
     public static void removeDuplicates(String str, int index) {
         if (index == str.length()) {
-            System.out.println(sb1);
+            System.out.println(sb);
             return;
         }
         char curChar = str.charAt(index);
         if (map[curChar - 'a'] != true) {
             map[curChar - 'a'] = true;
-            sb1.append(curChar);
+            sb.append(curChar);
         }
         removeDuplicates(str, ++index);
+    }
+
+    public static HashSet<String> set = new HashSet<>();
+
+    public static void subSequences(String str, int index, String newStr, HashSet<String> set) {
+        if (index == str.length()) {
+            if (set.contains(newStr)) {
+                return;
+            } else {
+                System.out.println(newStr);
+                set.add(newStr);
+                return;
+            }
+
+        }
+        char curChar = str.charAt(index);
+        subSequences(str, index + 1, newStr + curChar, set);
+        subSequences(str, index + 1, newStr, set);
     }
 
     public static void main(String[] args) {
@@ -161,7 +180,8 @@ public class Recursions {
 
         // moveAllX("axbxcxxdxx", 0, 'x');
 
-        removeDuplicates("abbcddde", 0);
+        // removeDuplicates("abbcddde", 0);
+        subSequences("abc", 0, "", set);
 
     }
 }
