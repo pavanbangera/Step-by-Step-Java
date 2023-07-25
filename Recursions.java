@@ -201,6 +201,20 @@ public class Recursions {
         return countDown + countRight;
     }
 
+    public static int placeTails(int n, int m) {
+        if (n == m) {
+            return 2;
+        }
+        if (n < m) {
+            return 1;
+        }
+
+        int verticalWay = placeTails(n - m, m);
+        int horizontalWay = placeTails(n - 1, m);
+
+        return verticalWay + horizontalWay;
+    }
+
     public static void main(String[] args) {
         // int n = 4;
         // printNumber(n);
@@ -232,7 +246,9 @@ public class Recursions {
 
         // printPermutation("abc", "");
 
-        System.out.println(countPaths(0, 0, 3, 3));
+        // System.out.println(countPaths(0, 0, 3, 3));
+
+        System.out.println(placeTails(5, 3));
 
     }
 }
