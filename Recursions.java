@@ -171,6 +171,19 @@ public class Recursions {
 
     }
 
+    public static void printPermutation(String str, String permutation) {
+        if (str.length() == 0) {
+            System.out.println(permutation);
+            return;
+        }
+
+        for (int i = 0; i < str.length(); i++) {
+            char curChar = str.charAt(i);
+            String newStr = str.substring(0, i) + str.substring(i + 1);
+            printPermutation(newStr, permutation + curChar);
+        }
+    }
+
     public static void main(String[] args) {
         // int n = 4;
         // printNumber(n);
@@ -198,7 +211,9 @@ public class Recursions {
         // removeDuplicates("abbcddde", 0);
         // subSequences("abc", 0, "", set);
 
-        printCombi("26", 0, "");
+        // printCombi("26", 0, "");
+
+        printPermutation("abc", "");
 
     }
 }
