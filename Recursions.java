@@ -248,7 +248,7 @@ public class Recursions {
 
         // System.out.println(countPaths(0, 0, 3, 3));
 
-        System.out.println(placeTails(5, 3));
+        // System.out.println(placeTails(5, 3));
 
     }
 }
