@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+
 public class LList {
     Node head;
     private int size = 0;
@@ -83,24 +85,35 @@ public class LList {
     }
 
     public static void main(String[] args) {
-        LList LL = new LList();
-        LL.print();
-        LL.addFirst("b");
-        LL.print();
-        LL.addFirst("a");
-        LL.print();
-        LL.addLast("c");
-        LL.print();
-        LL.addLast("d");
-        LL.print();
-        LL.deleteFirst();
-        LL.print();
-        LL.deleteFirst();
-        LL.print();
-        LL.deleteLast();
-        LL.print();
-        LL.deleteLast();
-        LL.print();
+        // LList LL = new LList();
+        // LL.print();
+        // LL.addFirst("b");
+        // LL.print();
+        // LL.addFirst("a");
+        // LL.print();
+        // LL.addLast("c");
+        // LL.print();
+        // LL.addLast("d");
+        // LL.print();
+        // LL.deleteFirst();
+        // LL.print();
+        // LL.deleteFirst();
+        // LL.print();
+        // LL.deleteLast();
+        // LL.print();
+        // LL.deleteLast();
+        // LL.print();
+
+        LinkedList<String> list = new LinkedList<>();
+        System.out.println(list);
+        list.add("c");
+        list.addFirst("b");
+        list.addFirst("a");
+        list.addLast("d");
+        System.out.println(list + " " + list.size());
+        for (String string : list) {
+            System.out.println(string);
+        }
 
     }
 }
