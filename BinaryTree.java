@@ -38,6 +38,17 @@ public class BinaryTree {
 
             return root;
         }
+
+        public static Node inOrder(Node root) {
+            if (root == null) {
+                System.out.print("-1" + " ");
+                return null;
+            }
+            inOrder(root.left);
+            System.out.print(root.data + " ");
+            inOrder(root.right);
+            return root;
+        }
     }
 
     public static void main(String[] args) {
@@ -46,6 +57,7 @@ public class BinaryTree {
         CreateBT tree = new CreateBT();
         Node root = tree.buildBT(nodes);
         System.out.println(root.data);
-        tree.preOrder(root);
+        // tree.preOrder(root);
+        tree.inOrder(root);
     }
 }
