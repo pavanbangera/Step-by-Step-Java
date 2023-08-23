@@ -26,6 +26,18 @@ public class BinaryTree {
 
             return newNode;
         }
+
+        public static Node preOrder(Node root) {
+            if (root == null) {
+                System.out.print("-1" + " ");
+                return null;
+            }
+            System.out.print(root.data + " ");
+            preOrder(root.left);
+            preOrder(root.right);
+
+            return root;
+        }
     }
 
     public static void main(String[] args) {
@@ -34,5 +46,6 @@ public class BinaryTree {
         CreateBT tree = new CreateBT();
         Node root = tree.buildBT(nodes);
         System.out.println(root.data);
+        tree.preOrder(root);
     }
 }
