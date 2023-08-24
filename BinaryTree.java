@@ -116,6 +116,17 @@ public class BinaryTree {
 
             return leftSum + rightSum + root.data;
         }
+
+        public static int heightofTree(Node root) {
+            if (root == null) {
+                return 0;
+            }
+
+            int left = heightofTree(root.left);
+            int right = heightofTree(root.right);
+
+            return Math.max(left, right) + 1;
+        }
     }
 
     public static void main(String[] args) {
@@ -129,6 +140,7 @@ public class BinaryTree {
         // tree.postOrder(root);
         // tree.levelOrder(root);
         // System.out.println(tree.countOfNode(root));
-        System.out.println(tree.sumOfNode(root));
+        // System.out.println(tree.sumOfNode(root));
+        System.out.println(tree.heightofTree(root));
     }
 }
