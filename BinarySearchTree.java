@@ -48,6 +48,37 @@ public class BinarySearchTree {
         }
     }
 
+    static Node delete(Node root, int val) {
+        if (root.data > val) {
+            root.left = delete(root.left, val);
+        } else if (root.data < val) {
+            root.right = delete(root.right, val);
+        } else {
+
+            if (root.left == null && root.right == null) {
+                return null;
+            }
+
+            if (root.left == null) {
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            }
+            Node IS = inorderSuccesor(root.right);
+            root.data = IS.data;
+            root.right = delete(root.right, IS.data);
+
+        }
+        return root;
+    }
+
+    static Node inorderSuccesor(Node root) {
+        while (root.left != null) {
+            root = root.left;
+        }
+        return root;
+    }
+
     public static void main(String[] args) {
         int values[] = { 5, 1, 3, 4, 2, 7 };
 
@@ -58,10 +89,13 @@ public class BinarySearchTree {
         }
         inOrder(root);
         System.out.println();
-        if (search(root, 8)) {
-            System.out.println("Found");
-        } else {
-            System.out.println("Not Found");
-        }
+        // if (search(root, 8)) {
+        // System.out.println("Found");
+        // } else {
+        // System.out.println("Not Found");
+        // }
+
+        delete(root, 5);
+        inOrder(root);
     }
 }
